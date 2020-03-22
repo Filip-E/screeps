@@ -13,4 +13,4 @@ module.exports.loop = function () {
 
 // creep designs:
 // Memory.CreepDesign.harvester= [WORK,CARRY,MOVE,MOVE]
-// Memory.CreepDesign.defender= [ATTACK,ATTACK,ATTACK,MOVE,MOVE]
+// Memory.CreepDesign.defender= [TOUCH,MOVE,MOVE,ATTACK,MOVE,ATTACK,MOVE,ATTACK,MOVE,ATTACK]

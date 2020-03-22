@@ -3,6 +3,8 @@ var genericSpawner = require('generic.spawner');
 module.exports = {
     defendRoom: function (room) {
         var hostiles = room.find(FIND_HOSTILE_CREEPS);
+        let defenders = _(Game.creeps).filter({ memory: { role: 'defender' }}).value();
+
         if (hostiles.length > 0) {
             var username = hostiles[0].owner.username;
             //Game.notify(`User ${username} spotted in room ${room}`);
@@ -11,11 +13,15 @@ module.exports = {
                 FIND_MY_STRUCTURES, { filter: { structureType: STRUCTURE_TOWER } });
             towers.forEach(tower => tower.attack(hostiles[0]));
             
-            let defenders = _(Game.creeps).filter({ memory: { role: 'defender' }}).value();
+
             for(let key in defenders){
                 if (defenders[key].attack(hostiles[0]) == ERR_NOT_IN_RANGE) {
                     defenders[key].moveTo(hostiles[0], { visualizePathStyle: { stroke: '#ffaa00' } });
                 }
+            }
+        }else{
+            for(key in defenders){
+                defenders[key].moveTo(Game.flags.Rally);
             }
         }
     },
