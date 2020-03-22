@@ -26,6 +26,7 @@ module.exports = {
         } else if (creep.memory.role == 'builder') {
           roleBuilder.run(creep, smallSource);
         }
+        smallSourceCurrentlyAssigned++;
       }else if(bigSourceCurrentlyAssigned < bigSourceLimit){
         if (creep.memory.role == 'harvester') {
           roleHarvester.run(creep, bigSource);
@@ -34,6 +35,7 @@ module.exports = {
         } else if (creep.memory.role == 'builder') {
           roleBuilder.run(creep, bigSource);
         }
+        bigSourceCurrentlyAssigned++;
       }
 
       // if (sourceCounter == sources.length - 1) {
