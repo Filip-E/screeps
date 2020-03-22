@@ -4,15 +4,17 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 
+// TODO -> maintance
+// TODO -> auto job switching
 
 module.exports = {
   run: function () {
     console.log('run glados');
-    const harvestersAmount = 10;
+    const harvestersAmount = 4;
     const currentHarvesterAmount = _(Memory.creeps).filter({ role: 'harvester' }).size();
     const upgradersAmount = 10;
     const currentupgradersAmount = _(Memory.creeps).filter({ role: 'harvester' }).size();
-    const buildersAmount = 10;
+    const buildersAmount = 2;
     const currentBuildersAmount = _(Memory.creeps).filter({ role: 'harvester' }).size();
 
     // TODO: come back at a later date
@@ -32,27 +34,9 @@ module.exports = {
       }
     }
 
-    var sources = creep.room.find(FIND_SOURCES_ACTIVE);
-    var sourceCounter = 0;
-    // run creeps
-    for (var name in Game.creeps) {
-      var creep = Game.creeps[name];
 
-      if (creep.memory.role == 'harvester') {
-        roleHarvester.run(creep, sources[sourceCounter]);
-        if (sourceCounter == sources.length - 1) {
-          sourceCounter = 0;
-        } else {
-          sourceCounter += 1;
-        }
-      }
-      if (creep.memory.role == 'upgrader') {
-        roleUpgrader.run(creep);
-      }
-      if (creep.memory.role == 'builder') {
-        roleBuilder.run(creep);
-      }
-    }
+    // run creeps
+    resourceController.runCreeps();
 
     // run defense
     for (const roomName in Game.rooms) {
