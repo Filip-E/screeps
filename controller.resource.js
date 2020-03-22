@@ -8,10 +8,10 @@ module.exports = {
   runCreeps: function () {
     // var sourceCounter = 0;
     var smallSource = Game.getObjectById('5bbcaba69099fc012e6340d1');
-    var smallSourceLimit = 1;
+    var smallSourceLimit = 2;
     var smallSourceCurrentlyAssigned = 0;
     var bigSource = Game.getObjectById('5bbcaba69099fc012e6340d0');
-    var bigSourceLimit = 4;
+    var bigSourceLimit = 7;
     var bigSourceCurrentlyAssigned = 0;
 
     for (var name in Game.creeps) {

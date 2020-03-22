@@ -9,9 +9,9 @@ module.exports = {
     console.log('run glados');
     const harvestersAmount = 1;
     const currentHarvesterAmount = _(Memory.creeps).filter({ role: 'harvester' }).size();
-    const upgradersAmount = 3;
+    const upgradersAmount = 4;
     const currentupgradersAmount = _(Memory.creeps).filter({ role: 'upgrader' }).size();
-    const buildersAmount = 1;
+    const buildersAmount = 4;
     const currentBuildersAmount = _(Memory.creeps).filter({ role: 'builder' }).size();
 
     // TODO: come back at a later date
