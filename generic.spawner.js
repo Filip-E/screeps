@@ -16,7 +16,7 @@ module.exports = {
   spawnCreep:function(spawner, design, name){
     var creepName = name + Game.time.toString();
 
-    if (genericSpawner.isNameValid(creepName,spawner)) {
+    if (this.isNameValid(creepName,spawner)) {
       var spawnResult =
       spawner.spawnCreep(design, creepName , {
         memory: {role: name}

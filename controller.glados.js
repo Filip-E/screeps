@@ -1,8 +1,5 @@
 var resourceController = require('controller.resource');
 var defenseController = require('controller.defense');
-var roleHarvester = require('role.harvester');
-var roleUpgrader = require('role.upgrader');
-var roleBuilder = require('role.builder');
 
 // TODO -> maintance
 // TODO -> auto job switching
