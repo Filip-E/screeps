@@ -11,7 +11,7 @@ module.exports = {
     var smallSourceLimit = 2;
     var smallSourceCurrentlyAssigned = 0;
     var bigSource = Game.getObjectById('5bbcaba69099fc012e6340d0');
-    var bigSourceLimit = 7;
+    var bigSourceLimit = 8;
     var bigSourceCurrentlyAssigned = 0;
 
     for (var name in Game.creeps) {
@@ -70,6 +70,3 @@ module.exports = {
     }
   }
 };
-
-// creep designs:
-// harvester: [WORK,CARRY,MOVE]

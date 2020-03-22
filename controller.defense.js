@@ -7,6 +7,21 @@ module.exports = {
             var towers = room.find(
                 FIND_MY_STRUCTURES, { filter: { structureType: STRUCTURE_TOWER } });
             towers.forEach(tower => tower.attack(hostiles[0]));
+            
+            let defenders = _(Game.creeps).filter({ memory: { role: 'harvester' }}).value();
+            for(let key in defenders){
+                if (defenders[key].attack(hostiles[0]) == ERR_NOT_IN_RANGE) {
+                    defenders[key].moveTo(hostiles[0], { visualizePathStyle: { stroke: '#ffaa00' } });
+                }
+            }
         }
-    }
+    },
+    spawnDefender: function (spawn) {
+        var defenderDesign = Memory.CreepDesign.defender;
+        var name = 'defender';
+    
+        if (genericSpawner.isNameValid(name, spawn)) {
+          genericSpawner.spawnCreep(spawn, defenderDesign, name);
+        }
+      }
 }

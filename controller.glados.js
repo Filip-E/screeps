@@ -13,11 +13,15 @@ module.exports = {
     const currentupgradersAmount = _(Memory.creeps).filter({ role: 'upgrader' }).size();
     const buildersAmount = 6;
     const currentBuildersAmount = _(Memory.creeps).filter({ role: 'builder' }).size();
+    const defendersAmount = 3;
+    const currentdefendersAmount = _(Memory.creeps).filter({ role: 'builder' }).size();
 
     console.log('current creep counts:');
     console.log('harvester: ' + currentHarvesterAmount);
     console.log('upgrader: ' + currentupgradersAmount);
     console.log('builder: ' + currentBuildersAmount);
+    console.log('defenders: ' + currentdefendersAmount);
+
     // TODO: come back at a later date
     // var creepsByRole = _.groupBy(Game.creeps, creep.memory.role);
     // _.forEach(creepsByRole, function(creep){
@@ -26,7 +30,9 @@ module.exports = {
 
     // spawn creeps
     for (const i in Game.spawns) {
-      if (currentHarvesterAmount < harvestersAmount) {
+      if (currentdefendersAmount < defendersAmount) {
+        defenseController.spawnDefender(Game.spawns[i])
+      } else if (currentHarvesterAmount < harvestersAmount) {
         resourceController.spawnHarvester(Game.spawns[i]);
       } else if (currentupgradersAmount < upgradersAmount) {
         resourceController.spawnUpgrader(Game.spawns[i]);

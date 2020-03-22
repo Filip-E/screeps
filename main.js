@@ -10,3 +10,7 @@ module.exports.loop = function () {
   glados.run();
   console.log();
 }
+
+// creep designs:
+// Memory.CreepDesign.harvester= [WORK,CARRY,MOVE,MOVE]
+// Memory.CreepDesign.defender= [ATTACK,ATTACK,ATTACK,MOVE,MOVE]
