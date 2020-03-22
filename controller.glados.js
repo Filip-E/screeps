@@ -7,11 +7,11 @@ var defenseController = require('controller.defense');
 module.exports = {
   run: function () {
     console.log('run glados');
-    const harvestersAmount = 4;
+    const harvestersAmount = 1;
     const currentHarvesterAmount = _(Memory.creeps).filter({ role: 'harvester' }).size();
-    const upgradersAmount = 10;
+    const upgradersAmount = 3;
     const currentupgradersAmount = _(Memory.creeps).filter({ role: 'upgrader' }).size();
-    const buildersAmount = 2;
+    const buildersAmount = 1;
     const currentBuildersAmount = _(Memory.creeps).filter({ role: 'builder' }).size();
 
     // TODO: come back at a later date
