@@ -47,9 +47,8 @@ var roleBuilder = {
 		}
 		else {
 			creep.say('⚡ assigned to source: ' + source.id);
-			var sources = creep.room.find(FIND_SOURCES);
-			if (creep.harvest(sources) == ERR_NOT_IN_RANGE) {
-				creep.moveTo(sources, { visualizePathStyle: { stroke: '#ffaa00' } });
+			if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
+				creep.moveTo(source, { visualizePathStyle: { stroke: '#ffaa00' } });
 			}
 		}
 	}
