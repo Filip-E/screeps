@@ -14,7 +14,7 @@ module.exports = {
     const buildersAmount = 6;
     const currentBuildersAmount = _(Memory.creeps).filter({ role: 'builder' }).size();
     const defendersAmount = 3;
-    const currentdefendersAmount = _(Memory.creeps).filter({ role: 'builder' }).size();
+    const currentdefendersAmount = _(Memory.creeps).filter({ role: 'defender' }).size();
 
     console.log('current creep counts:');
     console.log('harvester: ' + currentHarvesterAmount);
