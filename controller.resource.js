@@ -2,17 +2,17 @@ var genericSpawner = require('generic.spawner');
 
 module.exports = {
 
-  spawnUpgrader: function (spawn) {
+  spawnHarvester: function (spawn) {
     var harvesterDesign = Memory.CreepDesign.harvester;
-    var name = 'upgrader';
+    var name = 'harvester';
 
     if (genericSpawner.isNameValid(name, spawn)) {
       genericSpawner.spawnCreep(spawn, harvesterDesign, name);
     }
-  }, 
-  spawnHarvester: function (spawn) {
+  },
+  spawnUpgrader: function (spawn) {
     var harvesterDesign = Memory.CreepDesign.harvester;
-    var name = 'harvester';
+    var name = 'upgrader';
 
     if (genericSpawner.isNameValid(name, spawn)) {
       genericSpawner.spawnCreep(spawn, harvesterDesign, name);
@@ -25,7 +25,7 @@ module.exports = {
     if (genericSpawner.isNameValid(name, spawn)) {
       genericSpawner.spawnCreep(spawn, harvesterDesign, name);
     }
-  },
+  }
 };
 
 // creep designs:
