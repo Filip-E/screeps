@@ -6,6 +6,7 @@ module.exports.loop = function () {
       delete Memory.creeps[i];
     }
   }
-  
+
   glados.run();
+  console.log();
 }
