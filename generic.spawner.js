@@ -22,6 +22,6 @@ module.exports = {
         memory: {role: name}
       });
     }
-    console.log('trying to spawn resulted in code: ' + spawnResult);
+    console.log('trying to spawn a '+ name +' resulted in code: ' + spawnResult);
   }
 };
