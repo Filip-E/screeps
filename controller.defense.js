@@ -1,6 +1,5 @@
 module.exports = {
     defendRoom: function (room) {
-        console.log(room);
         var hostiles = room.find(FIND_HOSTILE_CREEPS);
         if (hostiles.length > 0) {
             var username = hostiles[0].owner.username;
