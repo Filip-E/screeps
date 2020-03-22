@@ -1,3 +1,5 @@
+var genericSpawner = require('generic.spawner');
+
 module.exports = {
     defendRoom: function (room) {
         var hostiles = room.find(FIND_HOSTILE_CREEPS);
